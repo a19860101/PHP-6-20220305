@@ -1,3 +1,7 @@
 <?php
     include('db.php');
-    print_r($_REQUEST);
+    extract($_REQUEST);
+    $skill = implode(',',$skill);
+    $sql = "INSERT INTO students(name,email,edu,gender,skill,content,created_at,updated_at)VALUES('$name','$email','$edu','$gender','$skill','$content',now(),now())";
+    
+    mysqli_query($db,$sql);
