@@ -51,6 +51,7 @@
             <td><?php echo $data['skill']; ?></td>
             <td><?php echo $data['created_at']; ?></td>
             <td>
+                <a href="show.php?id=<?php echo $data['id'];?>">詳細資料</a>
                 <form action="delete.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
                     <input type="submit" value="刪除資料" onclick="return confirm('確認刪除？')">
