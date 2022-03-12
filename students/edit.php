@@ -21,7 +21,7 @@
         </div>
         <div>
             <label for="">E-mail</label>
-            <input type="text" name="email" value="<?php echo $data['name']; ?>">
+            <input type="text" name="email" value="<?php echo $data['email']; ?>">
         </div>
         <div>
             <label for="">學歷</label>
@@ -60,6 +60,7 @@
             <label for="">備註</label>
             <textarea name="content" id="" cols="30" rows="10"><?php echo $data['content']; ?></textarea>
         </div>
+        <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
         <input type="submit" value="送出">
     </form>
 </body>
