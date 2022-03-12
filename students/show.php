@@ -25,5 +25,6 @@
         <li>最後更新時間:<?php echo $data['updated_at']; ?> </li>
     </ul>
     <a href="index.php">學生列表</a>
+    <a href="edit.php?id=<?php echo $data['id']; ?>">編輯資料</a>
 </body>
 </html>
