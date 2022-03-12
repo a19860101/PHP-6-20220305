@@ -38,6 +38,7 @@
             <th>學歷</th>
             <th>專長</th>
             <th>建立時間</th>
+            <th>動作</th>
         </tr>
 
     <?php foreach($datas as $data){ ?>
@@ -49,6 +50,12 @@
             <td><?php echo $data['edu']; ?></td>
             <td><?php echo $data['skill']; ?></td>
             <td><?php echo $data['created_at']; ?></td>
+            <td>
+                <form action="delete.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
+                    <input type="submit" value="刪除資料">
+                </form>
+            </td>
         </tr>
     <?php } ?>
     </table>
