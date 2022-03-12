@@ -41,6 +41,15 @@
                 女
             </label>
         </div>
+        <div>
+            <label for="">專長</label>
+            <input type="checkbox" value="國文" id="chinese" name="skill[]">
+            <label for="chinese">國文</label>
+            <input type="checkbox" value="英文" id="english" name="skill[]">
+            <label for="english">英文</label>
+            <input type="checkbox" value="數學" id="math" name="skill[]">
+            <label for="math">數學</label>
+        </div>
         <input type="submit" value="送出">
     </form>
 </body>

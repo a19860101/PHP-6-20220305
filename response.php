@@ -11,3 +11,7 @@
     echo $edu;
     echo  '<br>';
     echo $gender;
+    echo '<br>';
+    // print_r($skill);
+    $skill = implode(',',$skill);
+    echo $skill;
