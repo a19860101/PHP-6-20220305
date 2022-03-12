@@ -7,7 +7,7 @@
     // 取所有資料
     $datas = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
-    print_r($datas);
+    // print_r($datas);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +18,14 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php
+        foreach($datas as $data){
+            echo '<div>'.$data['name'].'</div>';
+            echo '<div>'.$data['email'].'</div>';
+            echo '<div>'.$data['gender'].'</div>';
+            echo '<div>'.$data['skill'].'</div>';
+            echo '<hr>';
+        }
+    ?>
 </body>
 </html>
