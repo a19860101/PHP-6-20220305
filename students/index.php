@@ -53,7 +53,7 @@
             <td>
                 <form action="delete.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
-                    <input type="submit" value="刪除資料">
+                    <input type="submit" value="刪除資料" onclick="return confirm('確認刪除？')">
                 </form>
             </td>
         </tr>
