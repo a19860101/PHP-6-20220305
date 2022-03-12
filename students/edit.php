@@ -14,7 +14,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="store.php" method="post">
+    <form action="update.php" method="post">
         <div>
             <label for="">姓名</label>
             <input type="text" name="name" value="<?php echo $data['name']; ?>">
@@ -26,31 +26,34 @@
         <div>
             <label for="">學歷</label>
             <select name="edu" id="">
-                <option value="國小">國小</option>
-                <option value="國中">國中</option>
-                <option value="高中職">高中職</option>
-                <option value="大專院校">大專院校</option>
-                <option value="研究所以上">研究所以上</option>
+                <option value="國小" <?php if($data['edu'] == '國小'){echo 'selected'; }?>>國小</option>
+                <option value="國中" <?php if($data['edu'] == '國中'){echo 'selected'; }?>>國中</option>
+                <option value="高中職" <?php if($data['edu'] == '高中職'){echo 'selected'; }?>>高中職</option>
+                <option value="大專院校" <?php if($data['edu'] == '大專院校'){echo 'selected'; }?>>大專院校</option>
+                <option value="研究所以上" <?php if($data['edu'] == '研究所以上'){echo 'selected'; }?>>研究所以上</option>
             </select>
         </div>
         <div>
             <label for="">性別</label>
             <label for="male">
-                <input type="radio" name="gender" value="男" id="male">
+                <input type="radio" name="gender" value="男" id="male" <?php echo $data['gender']=='男'?'checked':'';?>>
                 男
             </label>
             <label for="female">
-                <input type="radio" name="gender" value="女" id="female">
+                <input type="radio" name="gender" value="女" id="female"<?php echo $data['gender']=='女'?'checked':'';?>>
                 女
             </label>
         </div>
         <div>
+            <?php
+                $skill = explode(',',$data['skill']);
+            ?>
             <label for="">專長</label>
-            <input type="checkbox" value="國文" id="chinese" name="skill[]">
+            <input type="checkbox" value="國文" id="chinese" name="skill[]" <?php echo in_array('國文',$skill)?'checked':'';?>>
             <label for="chinese">國文</label>
-            <input type="checkbox" value="英文" id="english" name="skill[]">
+            <input type="checkbox" value="英文" id="english" name="skill[]" <?php echo in_array('英文',$skill)?'checked':'';?>>
             <label for="english">英文</label>
-            <input type="checkbox" value="數學" id="math" name="skill[]">
+            <input type="checkbox" value="數學" id="math" name="skill[]" <?php echo in_array('數學',$skill)?'checked':'';?>>
             <label for="math">數學</label>
         </div>
         <div>
