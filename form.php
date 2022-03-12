@@ -50,6 +50,10 @@
             <input type="checkbox" value="數學" id="math" name="skill[]">
             <label for="math">數學</label>
         </div>
+        <div>
+            <label for="">備註</label>
+            <textarea name="content" id="" cols="30" rows="10"></textarea>
+        </div>
         <input type="submit" value="送出">
     </form>
 </body>

@@ -15,3 +15,5 @@
     // print_r($skill);
     $skill = implode(',',$skill);
     echo $skill;
+    echo '<br>';
+    echo $content;
