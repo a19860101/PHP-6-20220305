@@ -9,3 +9,5 @@
     echo $email;
     echo '<br>';
     echo $edu;
+    echo  '<br>';
+    echo $gender;
