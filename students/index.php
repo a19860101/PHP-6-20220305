@@ -26,6 +26,9 @@
     </style>
 </head>
 <body>
+    <nav>
+        <a href="create.php">新增學生資料</a>
+    </nav>
     <table>
         <tr>
             <th>序號</th>
@@ -34,7 +37,6 @@
             <th>性別</th>
             <th>學歷</th>
             <th>專長</th>
-            <th>備註</th>
             <th>建立時間</th>
         </tr>
 
@@ -46,7 +48,6 @@
             <td><?php echo $data['gender']; ?></td>
             <td><?php echo $data['edu']; ?></td>
             <td><?php echo $data['skill']; ?></td>
-            <td><?php echo $data['content']; ?></td>
             <td><?php echo $data['created_at']; ?></td>
         </tr>
     <?php } ?>
