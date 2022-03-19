@@ -1,5 +1,6 @@
 <?php
-    include('db.php');
+    include('function.php');
+    $datas = index();
 ?>
 <!DOCTYPE html>
 <html lang="en">
