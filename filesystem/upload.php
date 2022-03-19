@@ -16,18 +16,26 @@
     // echo $type;
     // echo '<br>';
 
+    //自訂檔名
+    $img_name = md5(time());
+    //副檔名
+    $ext = pathinfo($name,PATHINFO_EXTENSION);
+    //完整名稱
+    $fullname = $img_name.'.'.$ext;
+
     $uploadFolder = 'images';
 
     if(!is_dir($uploadFolder)){
         mkdir($uploadFolder);
     }
 
-    $target = $uploadFolder.'/'.$name;
+    $target = $uploadFolder.'/'.$fullname;
 
     switch($error){
         case 0:
             if(move_uploaded_file($tmp_name,$target)){
                 echo '上傳成功';
+                header('refresh:1;url=form.php');
             }else{
                 echo '上傳失敗';
             }
