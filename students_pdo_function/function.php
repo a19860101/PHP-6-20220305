@@ -43,3 +43,11 @@
         }
         return $data;
     }
+    function update(){}
+    function delete($request){
+        extract($request);
+
+        $sql = "DELETE FROM students WHERE id = ?";
+        $stmt = pdo()->prepare($sql);
+        $stmt->execute([$id]);
+    }
