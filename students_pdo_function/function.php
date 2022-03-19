@@ -43,7 +43,14 @@
         }
         return $data;
     }
-    function update(){}
+    function update($request){
+        extract($request);
+        $skill = implode(',',$skill);
+    
+        $sql = 'UPDATE students SET name=?,email=?,edu=?,gender=?,skill=?,content=?,updated_at=? WHERE id = ?';
+        $stmt = pdo()->prepare($sql);
+        $stmt->execute([$name,$email,$edu,$gender,$skill,$content,now(),$id]);
+    }
     function delete($request){
         extract($request);
 
