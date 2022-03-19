@@ -23,6 +23,13 @@
     //完整名稱
     $fullname = $img_name.'.'.$ext;
 
+    //判斷圖片格式
+    if($ext != 'jpg' &&$ext != 'jpeg' && $ext!='gif' && $ext!='png'){
+        echo "<script>alert('請上傳正確的圖片格式');</script>";
+        header('refresh:0;url=form.php');
+        return ;
+    }
+
     $uploadFolder = 'images';
 
     if(!is_dir($uploadFolder)){
