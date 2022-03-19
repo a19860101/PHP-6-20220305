@@ -24,7 +24,8 @@
         echo $e->getMessage();
     }
 
-  
+    date_default_timezone_set('Asia/Taipei');
+    $now = date("y-m-d H:i:s");
 
     // try {
     //     $sql = 'SELECT * FROM sudents';
