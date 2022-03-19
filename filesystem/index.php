@@ -1,3 +1,10 @@
+<?php
+
+    if(isset($_POST['del'])){
+        // echo $_POST['img'];
+        unlink($_POST['img']);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +20,18 @@
     <?php
         $imgs = glob('images/*');
         // print_r($imgs);
+        $img_num = count($imgs);
     ?>
+    <div>
+        目前共有<?php echo $img_num; ?>張圖片
+    </div>
     <?php foreach($imgs as $img){ ?>
         <img src="<?php echo $img;?>" width="200">
+        <form action="" method="post">
+            <input type="hidden" name="img" value="<?php echo $img; ?>">
+            <input type="submit" value="刪除" name="del">
+        </form>
+        <hr>
     <?php } ?>
 </body>
 </html>
