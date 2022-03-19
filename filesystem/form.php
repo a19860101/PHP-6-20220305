@@ -12,5 +12,6 @@
         <input type="file" name="img">
         <input type="submit" value="上傳">
     </form>
+    <?php var_dump(is_dir('images'));?>
 </body>
 </html>
