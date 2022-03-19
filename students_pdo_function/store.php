@@ -1,12 +1,8 @@
 <?php
-    include('db.php');
-    extract($_REQUEST);
-    $skill = implode(',',$skill);
-
-    $sql = 'INSERT INTO students(name,email,edu,gender,skill,content,created_at,updated_at)VALUES(?,?,?,?,?,?,?,?)';
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$name,$email,$edu,$gender,$skill,$content,$now,$now]);
-
+    include('function.php');
+   
     // header('location:index.php');
+    store($_REQUEST);
+    
     echo "<script>alert('學生資料已建立!');</script>";
     header('refresh:0;url=index.php');

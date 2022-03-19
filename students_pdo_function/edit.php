@@ -1,15 +1,6 @@
 <?php
-        include('db.php');
-        extract($_REQUEST);
-        try {
-            //預備陳述式
-            $sql = 'SELECT * FROM students WHERE id = ?';
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute([$id]);
-            $data = $stmt->fetch();
-        }catch(PDOException $e){
-            echo $e->getMessage();
-        }
+    include('function.php');
+    $data = edit($_REQUEST);    
 ?>
 <!DOCTYPE html>
 <html lang="en">
