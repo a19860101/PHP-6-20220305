@@ -6,8 +6,8 @@
     
     // mysqli_query($db,$sql);
 
-    date_default_timezone_set('Asia/Taipei');
-    $now = date('Y-m-d H:i:s');
+    // date_default_timezone_set('Asia/Taipei');
+    // $now = date('Y-m-d H:i:s');
 
     $sql = 'INSERT INTO students(name,email,edu,gender,skill,content,created_at,updated_at)VALUES(?,?,?,?,?,?,?,?)';
     $stmt = $db->prepare($sql);

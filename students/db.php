@@ -24,3 +24,6 @@
     }
 
     $db->query('SET NAMES utf8mb4');
+
+    date_default_timezone_set('Asia/Taipei');
+    $now = date('Y-m-d H:i:s');
