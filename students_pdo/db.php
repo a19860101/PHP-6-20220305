@@ -15,10 +15,10 @@
         // $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_SILENT);
         
         //主動報錯
-        $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
+        // $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
         
         //主動例外
-        // $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
     }catch(PDOException $e){
         echo $e->getMessage();
@@ -26,13 +26,13 @@
 
   
 
-    try {
-        $sql = 'SELECT * FROM sudents';
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        $data = $stmt->fetch();
+    // try {
+    //     $sql = 'SELECT * FROM sudents';
+    //     $stmt = $pdo->prepare($sql);
+    //     $stmt->execute();
+    //     $data = $stmt->fetch();
     
-        print_r($data);
-    }catch(PDOException $e){
-        echo $e->getMessage();
-    }
+    //     print_r($data);
+    // }catch(PDOException $e){
+    //     echo $e->getMessage();
+    // }
