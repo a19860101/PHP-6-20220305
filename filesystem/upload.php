@@ -16,14 +16,42 @@
     // echo $type;
     // echo '<br>';
 
-    $uploadFolder = 'photos';
-    
+    $uploadFolder = 'images';
+
     if(!is_dir($uploadFolder)){
         mkdir($uploadFolder);
     }
 
     $target = $uploadFolder.'/'.$name;
 
-    if($error == 0){
-        move_uploaded_file($tmp_name,$target );
+    switch($error){
+        case 0:
+            if(move_uploaded_file($tmp_name,$target)){
+                echo '上傳成功';
+            }else{
+                echo '上傳失敗';
+            }
+            
+            break;
+        case 1:
+            echo '上傳檔案過大(伺服器設定)';
+            break;
+        case 2:
+            echo '上傳檔案過大(表單設定)';
+            break;
+        case 3:
+            echo '只有部分上傳';
+            break;
+        case 4:
+            echo '請選擇檔案';
+            break;            
+        case 6:
+            echo '遺失暫存資料夾';
+            break;
+        case 7:
+            echo '檔案無法寫入';
+            break;
+        case 8:
+            echo '不支援檔案上傳';
+            break;
     }
