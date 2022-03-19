@@ -1,13 +1,18 @@
 <?php
     include('db.php');
-    $sql = 'SELECT * FROM students';
-    $result = mysqli_query($db, $sql);
-    // 取單筆資料
-    // $data = mysqli_fetch_assoc($result);
-    // 取所有資料
-    $datas = mysqli_fetch_all($result,MYSQLI_ASSOC);
+    // $sql = 'SELECT * FROM students';
+    // $result = mysqli_query($db, $sql);
+    // // 取單筆資料
+    // // $data = mysqli_fetch_assoc($result);
+    // // 取所有資料
+    // $datas = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
-    // print_r($datas);
+    // // print_r($datas);
+
+    $sql = 'SELECT * FROM students';
+    // $result = $db->query($sql);
+    // $datas = $result->fetch_all(MYSQLI_ASSOC);
+    $datas = $db->query($sql)->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
