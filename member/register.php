@@ -18,8 +18,8 @@
                 <h2>註冊會員</h2>
                 <form action="store.php" method="post">
                     <div class="mb-3">
-                        <label for="" class="form-label">帳號</label>
-                        <input type="text" name="user" class="form-control">
+                        <label for="" class="form-label">名稱</label>
+                        <input type="text" name="name" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">密碼</label>

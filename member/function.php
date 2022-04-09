@@ -12,10 +12,10 @@
             return ;
         }
 
-        $sql = 'INSERT INTO users(user,pw,email,created_at)VALUES(?,?,?,?)';
+        $sql = 'INSERT INTO users(name,pw,email,created_at)VALUES(?,?,?,?)';
         $stmt = pdo()->prepare($sql);
         $pw = sha1(md5($pw));
-        $stmt->execute([$user,$pw,$email,$now]);    
+        $stmt->execute([$name,$pw,$email,$now]);    
     }
     function checkMail($email){
         $sql = 'SELECT * FROM users WHERE email = ?';
@@ -25,4 +25,24 @@
         return $stmt->rowCount() > 0 ? 1 : 0;
 
 
+    }
+    function auth($request){
+        session_start();
+        extract($request);
+        $sql = 'SELECT * FROM users WHERE email = ?';
+        $stmt = pdo()->prepare($sql);
+        $stmt->execute([$email]);
+        
+        $user = $stmt->fetch();
+
+        if(!$user){
+            echo '<script>alert("Email不存在，請重新輸入或註冊!")</script>';
+            header('refresh:0;url=index.php');
+            return;
+        }
+        if($user['pw'] == sha1(md5($pw))){
+            $_SESSION['AUTH'] = $user;
+            echo '<script>alert("登入成功!")</script>';
+            header('refresh:0;url=index.php');
+        }
     }

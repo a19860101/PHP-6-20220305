@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,5 +11,12 @@
 <body>
     <?php include('template/nav.php'); ?>
     <h1>首頁</h1>
+    <?php
+        if(isset($_SESSION['AUTH'])){
+            echo $_SESSION['AUTH']['email'];
+        }else{
+            echo '訪客';
+        }
+    ?>
 </body>
 </html>
