@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-6">
                 <h2>註冊會員</h2>
-                <form action="">
+                <form action="store.php" method="post">
                     <div class="mb-3">
                         <label for="" class="form-label">帳號</label>
                         <input type="text" name="user" class="form-control">
