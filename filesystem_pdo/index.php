@@ -4,8 +4,13 @@
     $imgs = $pdo->query($sql)->fetchAll();
     
     if(isset($_POST['del'])){
-        // echo $_POST['img'];
-        unlink($_POST['img']);
+        extract($_POST);
+        $sql = 'DELETE FROM galleries WHERE id = ?';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id]);
+        unlink('images/'.$_POST['path']);
+        echo "<script>alert('圖片已刪除')</script>";
+        header('refresh:0;url=index.php');
     }
 ?>
 <!DOCTYPE html>
@@ -31,7 +36,8 @@
     <?php foreach($imgs as $img){ ?>
         <img src="images/<?php echo $img['path'];?>" width="200">
         <form action="" method="post">
-            <input type="hidden" name="img" value="<?php echo $img['id']; ?>">
+            <input type="hidden" name="id" value="<?php echo $img['id']; ?>">
+            <input type="hidden" name="path" value="<?php echo $img['path']; ?>">
             <input type="submit" value="刪除" name="del">
         </form>
         <hr>
