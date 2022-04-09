@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(isset($_REQUEST['del'])){
+        session_destroy();
+        header('location:index.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,5 +29,8 @@
             }
         ?>
     </div>
+    <form action="" method="post">
+        <input type="submit" name="del" value="清除session">
+    </form>
 </body>
 </html>

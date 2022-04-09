@@ -12,5 +12,7 @@
 </head>
 <body>
     <h1>USER: <?php echo $_SESSION['USER']; ?></h1>
+
+    <a href="index.php">建立session</a>
 </body>
 </html>
