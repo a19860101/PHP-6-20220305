@@ -1,6 +1,7 @@
 <?php
     session_start();
-    $_SESSION['USER'] = $_REQUEST['user'];
+    $_SESSION['USER'] = $_REQUEST;
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +12,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>USER: <?php echo $_SESSION['USER']; ?></h1>
+    <h1>USER: <?php echo $_SESSION['USER']['name']; ?></h1>
+    <div>電話:<?php echo $_SESSION['USER']['phone']; ?></div>
+    <div>E-mail:<?php echo $_SESSION['USER']['email']; ?></div>
 
     <a href="index.php">建立session</a>
 </body>

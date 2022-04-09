@@ -15,19 +15,21 @@
 </head>
 <body>
     <form action="result.php" method="post">
-        <input type="text" name="user">
+        <input type="text" name="name" placeholder="姓名">
+        <input type="text" name="phone" placeholder="電話">
+        <input type="text" name="email" placeholder="Email">
         <input type="submit" value="建立session">
     </form>
 
     <div>
         
-        <?php
-            if(isset($_SESSION['USER'])){
-                echo '目前session為'.$_SESSION['USER'];
-            }else{
-                echo '目前尚無session';
-            }
-        ?>
+        <?php if(isset($_SESSION['USER'])){ ?>
+            <h1>USER: <?php echo $_SESSION['USER']['name']; ?></h1>
+            <div>電話:<?php echo $_SESSION['USER']['phone']; ?></div>
+            <div>E-mail:<?php echo $_SESSION['USER']['email']; ?></div>
+        <?php }else{ ?>
+            <div>目前尚無session</div>
+        <?php } ?>
     </div>
     <form action="" method="post">
         <input type="submit" name="del" value="清除session">
