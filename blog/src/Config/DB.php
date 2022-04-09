@@ -1,6 +1,6 @@
 <?php
     namespace Gjun\Blog\Config;
-    
+    use PDO;
     class DB {
         function pdo(){
             $db_host = 'localhost';

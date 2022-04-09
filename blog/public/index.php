@@ -1,11 +1,6 @@
 <?php
     include('../vendor/autoload.php');
-    use Gjun\Blog\Config\DB;
-    use Gjun\Blog\Config\Test;
 
-    // echo DB::now();
+    use Gjun\Blog\Controller\Student;
 
-    echo DB::now();
-
-    // echo Gjun\Blog\Config\Test::go();
-    echo Test::go();
+    print_r(Student::index());
