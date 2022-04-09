@@ -1,5 +1,8 @@
 <?php
-
+    include('db.php');
+    $sql = 'SELECT * FROM galleries';
+    $imgs = $pdo->query($sql)->fetchAll();
+    
     if(isset($_POST['del'])){
         // echo $_POST['img'];
         unlink($_POST['img']);
@@ -18,7 +21,7 @@
         <a href="form.php">新增圖片</a>
     </nav>
     <?php
-        $imgs = glob('images/*');
+        // $imgs = glob('images/*');
         // print_r($imgs);
         $img_num = count($imgs);
     ?>
@@ -26,9 +29,9 @@
         目前共有<?php echo $img_num; ?>張圖片
     </div>
     <?php foreach($imgs as $img){ ?>
-        <img src="<?php echo $img;?>" width="200">
+        <img src="images/<?php echo $img['path'];?>" width="200">
         <form action="" method="post">
-            <input type="hidden" name="img" value="<?php echo $img; ?>">
+            <input type="hidden" name="img" value="<?php echo $img['id']; ?>">
             <input type="submit" value="刪除" name="del">
         </form>
         <hr>
