@@ -9,7 +9,12 @@
     //完整名稱
     $fullname = $img_name.'.'.$ext;
 
-    $custom_name = $_REQUEST['name'];
+    // $custom_name = $_REQUEST['name'];
+    if($_REQUEST['name'] == ''){
+        $custom_name = $name;
+    }else{
+        $custom_name = $_REQUEST['name'];
+    }
     
     //判斷圖片格式
     if($ext != 'jpg' &&$ext != 'jpeg' && $ext!='gif' && $ext!='png'){
