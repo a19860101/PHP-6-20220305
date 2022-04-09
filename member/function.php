@@ -14,7 +14,8 @@
 
         $sql = 'INSERT INTO users(name,pw,email,created_at)VALUES(?,?,?,?)';
         $stmt = pdo()->prepare($sql);
-        $pw = sha1(md5($pw));
+        // $pw = sha1(md5($pw));
+        $pw = password_hash($pw,PASSWORD_DEFAULT);
         $stmt->execute([$name,$pw,$email,$now]);    
     }
     function checkMail($email){
@@ -40,9 +41,17 @@
             header('refresh:0;url=index.php');
             return;
         }
-        if($user['pw'] == sha1(md5($pw))){
+        // if($user['pw'] == sha1(md5($pw))){
+        //     $_SESSION['AUTH'] = $user;
+        //     echo '<script>alert("登入成功!")</script>';
+        //     header('refresh:0;url=index.php');
+        // }
+        if(password_verify($pw,$user['pw'])){
             $_SESSION['AUTH'] = $user;
             echo '<script>alert("登入成功!")</script>';
             header('refresh:0;url=index.php');
+        }else{
+            echo '<script>alert("帳號或密碼錯誤!")</script>';
+            header('refresh:0;url=login.php');
         }
     }
