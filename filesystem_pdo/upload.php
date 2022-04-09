@@ -1,21 +1,7 @@
 <?php
+    include('db.php');
     extract($_FILES['img']);
-    // echo $_FILES['img']['name'];
-    // echo $name;
-    // echo '<br>';
-    // echo $_FILES['img']['size'];
-    // echo $size;
-    // echo '<br>';
-    // echo $_FILES['img']['error'];
-    // echo $error;
-    // echo '<br>';
-    // echo $_FILES['img']['tmp_name'];
-    // echo $tmp_name;
-    // echo '<br>';
-    // echo $_FILES['img']['type'];
-    // echo $type;
-    // echo '<br>';
-
+    
     //自訂檔名
     $img_name = md5(time());
     //副檔名
@@ -23,6 +9,8 @@
     //完整名稱
     $fullname = $img_name.'.'.$ext;
 
+    $custom_name = $_REQUEST['name'];
+    
     //判斷圖片格式
     if($ext != 'jpg' &&$ext != 'jpeg' && $ext!='gif' && $ext!='png'){
         echo "<script>alert('請上傳正確的圖片格式');</script>";
@@ -38,9 +26,15 @@
 
     $target = $uploadFolder.'/'.$fullname;
 
+    $sql = 'INSERT INTO galleries(name,path,created_at)VALUES(?,?,?)';
+    $stmt = $pdo->prepare($sql);
+    
+
     switch($error){
         case 0:
             if(move_uploaded_file($tmp_name,$target)){
+
+                $stmt->execute([$custom_name,$fullname,$now]);
                 echo '上傳成功';
                 header('refresh:1;url=index.php');
             }else{
