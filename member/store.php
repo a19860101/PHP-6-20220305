@@ -3,4 +3,6 @@
 
     store($_REQUEST);
 
+    // checkMail($_REQUEST['email']);
+
     header('location:index.php');
