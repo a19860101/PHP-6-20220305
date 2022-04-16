@@ -7,11 +7,11 @@
         function store($request){
             extract($request);
             
-            // if($this->checkMail($email) != 0){
-            //     echo "<script>alert('帳號重複');</script>";
-            //     header('refresh:0;url=register.php');
-            //     return ;
-            // }
+            if(User::checkMail($email) != 0){
+                echo "<script>alert('帳號重複');</script>";
+                header('refresh:0;url=register.php');
+                return ;
+            }
 
             $sql = 'INSERT INTO users(name,pw,email,created_at)VALUES(?,?,?,?)';
             $stmt = DB::pdo()->prepare($sql);
