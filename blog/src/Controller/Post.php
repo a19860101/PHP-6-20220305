@@ -42,10 +42,16 @@
             $post = $stmt->fetch();
             return $post;
         }
-        function update($request){
+        function update($request,$cover){
             extract($request);
-            $sql = 'UPDATE posts SET title=?,content=?,category_id=?,updated_at=? WHERE id=?';
+            $sql = 'UPDATE posts SET title=?,cover=?,content=?,category_id=?,updated_at=? WHERE id=?';
             $stmt = DB::pdo()->prepare($sql);
-            $stmt->execute([$title, $content, $category_id, DB::now(),$id]);
+            $stmt->execute([$title,$cover, $content, $category_id, DB::now(),$id]);
+        }
+        function deleteCover($id){
+            $sql = 'UPDATE posts SET cover=? WHERE id=?';
+            $stmt = DB::pdo()->prepare($sql);
+            $stmt->execute([null,$id]);
+        
         }
     }

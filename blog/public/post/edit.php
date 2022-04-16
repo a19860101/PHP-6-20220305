@@ -21,7 +21,7 @@
                     <?php if($post['cover'] != null){ ?>
                     <img src="images/<?php echo $post['cover']; ?>" width="200">
                     <input type="hidden" name="cover" value="<?php echo $post['cover']; ?>">
-                    <a href="#">刪除圖片</a>
+                    <a href="deleteCover.php?cover=<?php echo $post['cover']; ?>&id=<?php echo $post['id'];?>">刪除圖片</a>
                     <?php }else{ ?>
                     <input type="file" name="cover" class="form-control">
                     <?php } ?>
