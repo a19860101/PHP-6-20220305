@@ -12,6 +12,10 @@
                     <input type="text" name="title" class="form-control" id="title">
                 </div>
                 <div class="mb-3">
+                    <label for="cover" class="form-label">文章封面</label>
+                    <input type="file" name="cover" id="cover" class="form-control">
+                </div>
+                <div class="mb-3">
                     <label for="category_id" class="form-label">文章分類</label>
                     <select name="category_id" id="category_id" class="form-select">
                         <option value="1">科技</option>
