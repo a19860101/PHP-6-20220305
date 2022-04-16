@@ -74,4 +74,7 @@
                     break;
             }
         }
+        function delete($path){
+            unlink($path);
+        }
     }
