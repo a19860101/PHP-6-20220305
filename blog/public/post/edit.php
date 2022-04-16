@@ -11,10 +11,20 @@
             <hr>
         </div>
         <div class="col-6">
-            <form action="update.php" method="post">
+            <form action="update.php" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="title" class="form-label">文章標題</label>
                     <input type="text" name="title" class="form-control" id="title" value="<?php echo $post['title'];?>">
+                </div>
+                <div class="mb-3">
+                <label for="cover" class="form-label">文章封面</label>
+                    <?php if($post['cover'] != null){ ?>
+                    <img src="images/<?php echo $post['cover']; ?>" width="200">
+                    <input type="hidden" name="cover" value="<?php echo $post['cover']; ?>">
+                    <a href="#">刪除圖片</a>
+                    <?php }else{ ?>
+                    <input type="file" name="cover" class="form-control">
+                    <?php } ?>
                 </div>
                 <div class="mb-3">
                     <label for="category_id" class="form-label">文章分類</label>
