@@ -33,4 +33,12 @@
             $stmt = DB::pdo()->prepare($sql);
             $stmt->execute([$id]);
         }
+        function edit($request){
+            extract($request);
+            $sql = 'SELECT * FROM posts WHERE id = ?';
+            $stmt = DB::pdo()->prepare($sql);
+            $stmt->execute([$id]);
+            $post = $stmt->fetch();
+            return $post;
+        }
     }
