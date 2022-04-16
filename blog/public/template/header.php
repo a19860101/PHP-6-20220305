@@ -27,6 +27,17 @@
                     <a class="nav-link" href="<?php echo $webroot; ?>/post/create.php">建立文章</a>
                 </li>
             </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="<?php echo $webroot; ?>/user/register.php" class="nav-link">註冊會員</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">登入</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">登出</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
