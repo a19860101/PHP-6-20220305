@@ -17,9 +17,13 @@
                 <div>
                     <?php echo $post['content']; ?>
                 </div>
+                <div class="my-3">
+                    <a href="post/show.php?id=<?php echo $post['id'];?>" class="btn btn-primary btn-sm">繼續閱讀</a>
+                </div>
                 <div class="mt-3">
                     <?php echo $post['updated_at']; ?>
                 </div>
+                
             </div>
         </div>
         <?php } ?>
