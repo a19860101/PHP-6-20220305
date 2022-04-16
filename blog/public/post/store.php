@@ -2,7 +2,11 @@
     include('../../vendor/autoload.php');
 
     use Gjun\Blog\Controller\Post;
+    use Gjun\Blog\Controller\File;
 
-    Post::store($_REQUEST);
+    $t = File::upload($_FILES['cover']);
+    echo $t;
 
-    header('location:../index.php');
+    // Post::store($_REQUEST);
+
+    // header('location:../index.php');
