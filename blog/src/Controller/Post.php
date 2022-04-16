@@ -2,6 +2,7 @@
     namespace Gjun\Blog\Controller;
     
     use Gjun\Blog\Config\DB;
+    use Gjun\Blog\Controller\File;
     
     class Post {
         function index(){
@@ -17,12 +18,12 @@
             $post = $stmt->fetch();
             return $post;
         }
-        function store($request){
+        function store($request,$cover){
             extract($request);
-            $sql = 'INSERT INTO posts(title, content, category_id, user_id, created_at, updated_at)VALUES(?,?,?,?,?,?)';
+            $sql = 'INSERT INTO posts(title,cover, content, category_id, user_id, created_at, updated_at)VALUES(?,?,?,?,?,?,?)';
             try {
                 $stmt = DB::pdo()->prepare($sql);
-                $stmt->execute([$title, $content, $category_id, 1, DB::now(),DB::now()]);
+                $stmt->execute([$title,$cover , $content, $category_id, 1, DB::now(),DB::now()]);
             }catch(PDOException $e){
                 echo $e->getMessage();
             }

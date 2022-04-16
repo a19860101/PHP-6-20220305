@@ -4,9 +4,8 @@
     use Gjun\Blog\Controller\Post;
     use Gjun\Blog\Controller\File;
 
-    $t = File::upload($_FILES['cover']);
-    echo $t;
+    $cover = File::upload($_FILES['cover']);
 
-    // Post::store($_REQUEST);
+    Post::store($_REQUEST,$cover);
 
-    // header('location:../index.php');
+    header('location:../index.php');

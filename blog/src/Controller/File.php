@@ -4,7 +4,10 @@
     class File {
         function upload($file){
             extract($file);
-    
+            if($name == ''){
+                $fullname = null;
+                return $fullname;
+            }
             //自訂檔名
             $img_name = md5(time());
             //副檔名
