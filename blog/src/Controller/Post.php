@@ -4,7 +4,11 @@
     use Gjun\Blog\Config\DB;
     
     class Post {
-        function index(){}
+        function index(){
+            $sql = 'SELECT * FROM posts ORDER BY id DESC';
+            $posts = DB::pdo()->query($sql)->fetchAll();
+            return $posts;
+        }
         
         function store($request){
             extract($request);
