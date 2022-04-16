@@ -27,4 +27,10 @@
                 echo $e->getMessage();
             }
         }
+        function delete($request){
+            extract($request);
+            $sql = 'DELETE FROM posts WHERE id = ?';
+            $stmt = DB::pdo()->prepare($sql);
+            $stmt->execute([$id]);
+        }
     }
