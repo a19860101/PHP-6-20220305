@@ -11,6 +11,11 @@
         <a href="/post">文章列表</a>
         <a href="/post/create">新增文章</a>
     </nav>
-    <h1></h1>
+    <div>
+        <h1>{{$post->title}}</h1>
+        <div>
+            {{$post->content}}
+        </div>
+    </div>
 </body>
 </html>

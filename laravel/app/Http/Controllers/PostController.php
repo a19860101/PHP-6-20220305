@@ -36,6 +36,10 @@ class PostController extends Controller
         return redirect('/post');
     }
     function show($id){
-        return $id;
+        // $posts = DB::select('SELECT * FROM posts WHERE id = ?',[$id]);
+        // $posts = DB::table('posts')->where('id',$id)->get();
+        $post = DB::table('posts')->find($id);
+        return view('post.show',compact('post'));
+
     }
 }
