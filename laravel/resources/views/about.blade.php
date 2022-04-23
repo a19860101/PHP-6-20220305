@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>about</h1>
+    {{-- <h1>{{$title}}</h1> --}}
+    <h1>{{$id}}</h1>
     <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut commodi ab error autem doloribus, voluptates id repellendus veritatis harum nulla aspernatur qui temporibus sunt! Accusantium recusandae necessitatibus odit eligendi voluptate?
     </p>
