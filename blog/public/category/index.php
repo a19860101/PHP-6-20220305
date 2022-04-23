@@ -29,7 +29,13 @@
             <h3>所有分類</h3>
             <ul class="list-group">
                 <?php foreach($categories as $category){ ?>
-                <li class="list-group-item"><?php echo $category['title']; ?></li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <?php echo $category['title']; ?>
+                    <form action="delete.php" method="post">
+                        <input type="hidden" name="id" value="<?php echo $category['id'];?>">
+                        <input type="submit" class="btn btn-danger btn-sm" value="刪除" onclick="return confirm('確認刪除')">
+                    </form>
+                </li>
                 <?php } ?>
             </ul>
         </div>

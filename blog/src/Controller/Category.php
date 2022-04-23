@@ -15,4 +15,11 @@
             $stmt = DB::pdo()->prepare($sql);
             $stmt->execute([$title, $slug, DB::now()]);
         }
+        function delete($request){
+            extract($request);
+            $sql = 'DELETE FROM categories WHERE id = ?';
+            $stmt = DB::pdo()->prepare($sql);
+            $stmt->execute([$id]);
+
+        }
     }
