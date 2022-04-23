@@ -19,5 +19,8 @@ Route::get('/', function () {
 // Route::get('about',function(){
 //     return view('about');
 // });
-Route::get('about','TestController@index');
-Route::get('product/{id}','TestController@product');
+// Route::get('about','TestController@index');
+// Route::get('product/{id}','TestController@product');
+
+Route::get('post','PostController@index');
+Route::get('post/create','PostController@create');
