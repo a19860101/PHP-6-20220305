@@ -10,7 +10,7 @@
             <h2>建立文章</h2>
             <hr>
         </div>
-        <div class="col-6">
+        <div class="col-8">
             <form action="store.php" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="title" class="form-label">文章標題</label>
@@ -47,6 +47,12 @@
 <script>
     tinymce.init({
         selector: '#content',
-        language:'zh_TW'
+        height: 800,
+        language:'zh_TW',
+        plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
+        toolbar: ' insertfile image  | bold italic underline strikethroug h| alignleft aligncenter alignright alignjustify  | fontfamily fontsize blocks | outdent indent |  numlist bullist | forecolor backcolor removeformat | undo redo| pagebreak | charmap emoticons | fullscreen  preview save print | media template link anchor codesample | ltr rtl',
+        toolbar_sticky: true,
+
+
     });
 </script>
