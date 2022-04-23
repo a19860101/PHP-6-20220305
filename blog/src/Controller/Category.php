@@ -9,4 +9,10 @@
             $categories = DB::pdo()->query($sql)->fetchAll();
             return $categories;
         }
+        function store($request){
+            extract($request);
+            $sql = 'INSERT INTO categories(title,slug,created_at)VALUES(?,?,?)';
+            $stmt = DB::pdo()->prepare($sql);
+            $stmt->execute([$title, $slug, DB::now()]);
+        }
     }
