@@ -12,8 +12,9 @@
         <a href="/post/create">新增文章</a>
     </nav>
     <h1>編輯文章</h1>
-    <form action="" method="post">
+    <form action="/post/{{$post->id}}" method="post">
         @csrf
+        @method('put')
         <div>
             <label for="">標題</label>
             <input type="text" name='title' value="{{$post->title}}">
