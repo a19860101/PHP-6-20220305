@@ -23,6 +23,7 @@
                 <div class="col-9 ps-4">
                     <h3 class="mb-3"><?php echo $post['title'];?></h3>
                     <div class="mb-3 text-secondary">作者:<?php echo $post['name']; ?></div>
+                    <div class="mb-3 text-secondary">分類:<?php echo $post['category_title']; ?></div>
                     <div>
                         <?php 
                             $content = strip_tags($post['content']);
