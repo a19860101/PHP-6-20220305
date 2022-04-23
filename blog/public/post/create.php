@@ -45,6 +45,7 @@
 <?php include('../template/footer.php'); ?>
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
+
     tinymce.init({
         selector: '#content',
         height: 800,
@@ -54,7 +55,7 @@
         toolbar_sticky: true,
         images_upload_url: 'postAcceptor.php',
         // images_reuse_filename: true
-        automatic_uploads: true
+        automatic_uploads: true,
 
     });
 </script>

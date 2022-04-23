@@ -48,7 +48,16 @@
     }
 
     // Accept upload if there was no origin, or if it is an accepted origin
-    $filetowrite = $imageFolder . $temp['name'];
+    // $filetowrite = $imageFolder . $temp['name'];
+
+    // 自訂檔名 
+    $img_name = md5(time());
+    //副檔名
+    $ext = pathinfo($temp['name'],PATHINFO_EXTENSION);
+    //完整名稱
+    $fullname = $img_name.'.'.$ext;
+    
+    $filetowrite = $imageFolder . $fullname;
     move_uploaded_file($temp['tmp_name'], $filetowrite);
 
     // Determine the base URL
