@@ -6,7 +6,7 @@
     
     class Post {
         function index(){
-            $sql = 'SELECT * FROM posts ORDER BY id DESC';
+            $sql = 'SELECT posts.*,users.name FROM posts LEFT JOIN users ON posts.user_id = users.id ORDER BY posts.id DESC';
             $posts = DB::pdo()->query($sql)->fetchAll();
             return $posts;
         }
