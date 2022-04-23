@@ -19,11 +19,12 @@
             return $post;
         }
         function store($request,$cover){
+            session_start();
             extract($request);
             $sql = 'INSERT INTO posts(title,cover, content, category_id, user_id, created_at, updated_at)VALUES(?,?,?,?,?,?,?)';
             try {
                 $stmt = DB::pdo()->prepare($sql);
-                $stmt->execute([$title,$cover , $content, $category_id, 1, DB::now(),DB::now()]);
+                $stmt->execute([$title,$cover , $content, $category_id, $_SESSION['AUTH']['id'], DB::now(),DB::now()]);
             }catch(PDOException $e){
                 echo $e->getMessage();
             }
