@@ -7,6 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-
+    <nav>
+        <a href="/post">文章列表</a>
+        <a href="/post/create">新增文章</a>
+    </nav>
+    <h1>編輯文章</h1>
+    <form action="" method="post">
+        @csrf
+        <div>
+            <label for="">標題</label>
+            <input type="text" name='title' value="{{$post->title}}">
+        </div>
+        <div>
+            <label for="">內文</label>
+            <textarea name="content" id="" cols="30" rows="10">{{$post->content}}</textarea>
+        </div>
+        <input type="submit" value="儲存">
+        <input type="button" value="取消" onclick="history.back()">
+    </form>
 </body>
 </html>

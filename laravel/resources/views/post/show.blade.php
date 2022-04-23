@@ -17,5 +17,8 @@
             {{$post->content}}
         </div>
     </div>
+    <div>
+        <a href="/post/{{$post->id}}/edit">編輯文章</a>
+    </div>
 </body>
 </html>
