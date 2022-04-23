@@ -52,7 +52,9 @@
         plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
         toolbar: ' insertfile image  | bold italic underline strikethroug h| alignleft aligncenter alignright alignjustify  | fontfamily fontsize blocks | outdent indent |  numlist bullist | forecolor backcolor removeformat | undo redo| pagebreak | charmap emoticons | fullscreen  preview save print | media template link anchor codesample | ltr rtl',
         toolbar_sticky: true,
-
+        images_upload_url: 'postAcceptor.php',
+        // images_reuse_filename: true
+        automatic_uploads: true
 
     });
 </script>
