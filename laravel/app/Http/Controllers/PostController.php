@@ -35,4 +35,7 @@ class PostController extends Controller
 
         return redirect('/post');
     }
+    function show($id){
+        return $id;
+    }
 }

@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-
+    <nav>
+        <a href="/post">文章列表</a>
+        <a href="/post/create">新增文章</a>
+    </nav>
+    <h1></h1>
 </body>
 </html>

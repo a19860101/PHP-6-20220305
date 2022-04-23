@@ -18,6 +18,9 @@
         <div>
             {{$post->content}}
         </div>
+        <div>
+            <a href="/post/{{$post->id}}">繼續閱讀</a>
+        </div>
     </div>
     @endforeach
 </body>
