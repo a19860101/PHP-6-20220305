@@ -12,5 +12,13 @@
         <a href="/post/create">新增文章</a>
     </nav>
     <h1>文章列表</h1>
+    @foreach($posts as $post)
+    <div>
+        <h2>{{$post->title}}</h2>
+        <div>
+            {{$post->content}}
+        </div>
+    </div>
+    @endforeach
 </body>
 </html>

@@ -9,7 +9,14 @@ class PostController extends Controller
 {
     //
     function index(){
-        return view('post.index');
+        // $posts = DB::select('SELECT * FROM posts ORDER BY id DESC');
+
+        $posts = DB::table('posts')->orderBy('id','DESC')->get();
+
+        return view('post.index',compact('posts'));
+        // return view('post.index')->with(['posts' => $posts]);
+        // return view('post.index',['posts' => $posts]);
+
     }
     function create(){
         return view('post.create');
