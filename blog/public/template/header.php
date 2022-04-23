@@ -29,6 +29,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $webroot; ?>/post/create.php">建立文章</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $webroot; ?>/category/index.php">分類管理</a>
+                </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <?php if(isset($_SESSION['AUTH'])){ ?>
