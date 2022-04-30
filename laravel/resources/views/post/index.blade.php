@@ -19,7 +19,7 @@
             {{$post->content}}
         </div>
         <div>
-            <a href="{{route('post.show',['id'=>$post->id])}}">繼續閱讀</a>
+            <a href="{{route('post.show',['post'=>$post->id])}}">繼續閱讀</a>
         </div>
     </div>
     @endforeach

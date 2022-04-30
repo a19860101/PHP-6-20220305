@@ -2,70 +2,86 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
-use DB;
 
 class PostController extends Controller
 {
-    //
-    function index(){
-        // $posts = DB::select('SELECT * FROM posts ORDER BY id DESC');
-
-        $posts = DB::table('posts')->orderBy('id','DESC')->get();
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+        $posts = Post::get();
         return view('post.index',compact('posts'));
-        // return view('post.index')->with(['posts' => $posts]);
-        // return view('post.index',['posts' => $posts]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Post $post)
+    {
 
     }
-    function create(){
-        return view('post.create');
-    }
-    function store(Request $request){
-        // return $request;
-        // DB::insert('INSERT INTO posts(title,content,created_at,updated_at)VALUES(?,?,?,?)' ,[
-        //     $request->title,$request->content,now(),now()
-        // ]);
-        DB::table('posts')->insert([
-            'title'     => $request->title,
-            'content'   => $request->content,
-            'created_at'=> now(),
-            'updated_at'=> now()
-        ]);
 
-        return redirect('/post');
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Post $post)
+    {
+        //
     }
-    function show($id){
-        // $posts = DB::select('SELECT * FROM posts WHERE id = ?',[$id]);
-        // $posts = DB::table('posts')->where('id',$id)->get();
-        $post = DB::table('posts')->find($id);
-        return view('post.show',compact('post'));
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Post $post)
+    {
+        //
     }
-    function edit($id){
-        $post = DB::table('posts')->find($id);
-        return view('post.edit',compact('post'));
-    }
-    function update(Request $request,$id){
 
-        // DB::update('UPDATE posts set title=?,content=?,updated_at=? WHERE id = ?',[
-        //     $request->title,
-        //     $request->content,
-        //     now(),
-        //     $id
-        // ]);
-
-        DB::table('posts')->where('id',$id)->update([
-            'title'     => $request->title,
-            'content'   => $request->content,
-            'updated_at'=> now(),
-        ]);
-        return redirect('post/'.$id);
-
-    }
-    function delete($id){
-        // DB::delete('DELETE FROM posts WHERE id = ?',[$id]);
-        DB::table('posts')->where('id',$id)->delete();
-        return redirect('/post');
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Post $post)
+    {
+        //
     }
 }
