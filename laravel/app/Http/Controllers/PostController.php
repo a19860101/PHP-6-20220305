@@ -52,11 +52,21 @@ class PostController extends Controller
         // ]);
         // $post->save();
 
-        // $post = new Post;
-        // $post->fill($request->all());
-        // $post->save();
+        if($request->file('cover')){
+            $ext = $request->file('cover')->getClientOriginalExtension();
+            $img = Str::uuid().'.'.$ext;
+            $request->file('cover')->storeAs('images',$img,'public');
+        }else{
+            $img = null;
+        }
 
-        Post::create($request->all());
+
+        $post = new Post;
+        $post->fill($request->all());
+        $post->cover = $img;
+        $post->save();
+
+        // Post::create($request->all());
 
         // Post::create([
         //     'title'     => $request->title,
