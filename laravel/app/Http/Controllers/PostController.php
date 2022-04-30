@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Str;
 
 class PostController extends Controller
 {
@@ -129,6 +130,6 @@ class PostController extends Controller
         $img = Str::uuid().'.'.$ext;
         request()->file('file')->storeAs('images',$img,'public');
 
-        return response()->json(['location' => '/images/'.$img]);
+        return response()->json(['location' => '/storage/images/'.$img]);
     }
 }
