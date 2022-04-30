@@ -19,6 +19,11 @@
     </div>
     <div>
         <a href="/post/{{$post->id}}/edit">編輯文章</a>
+        <form action="/post/{{$post->id}}" method="post">
+            @csrf
+            @method('delete')
+            <input type="submit" value="刪除文章" onclick="return confirm('確認刪除')">
+        </form>
     </div>
 </body>
 </html>
