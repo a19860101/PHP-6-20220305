@@ -51,9 +51,16 @@ class PostController extends Controller
         // ]);
         // $post->save();
 
-        $post = new Post;
-        $post->fill($request->all());
-        $post->save();
+        // $post = new Post;
+        // $post->fill($request->all());
+        // $post->save();
+
+        Post::create($request->all());
+
+        // Post::create([
+        //     'title'     => $request->title,
+        //     'content'   => $request->content
+        // ]);
 
         return redirect()->route('post.index');
     }
@@ -66,7 +73,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-
+        return view('post.show',compact('post'));
     }
 
     /**
