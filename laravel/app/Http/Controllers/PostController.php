@@ -124,4 +124,7 @@ class PostController extends Controller
 
         return redirect()->route('post.index');
     }
+    public function upload(){
+
+    }
 }

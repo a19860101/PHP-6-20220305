@@ -31,3 +31,4 @@ Route::get('/', function () {
 // Route::delete('post/{id}','PostController@delete')->name('post.delete');
 
 Route::resource('post','PostController');
+Route::post('post/upload','PostController@upload')->name('post.upload');
