@@ -15,11 +15,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">內文</label>
-                    <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
                 </div>
                 <input type="submit" value="新增文章" class="btn btn-primary">
             </form>
         </div>
     </div>
 </div>
+@include('template.tinymce');
 @endsection
