@@ -8,8 +8,12 @@
         <div class="col-9">
             @foreach($posts as $post)
             <div class="row mb-3">
-                <div class="col-6">
-                    <img src="https://picsum.photos/id/11/800/600" class="w-100">
+                <div class="col-6 overflow-hidden" style="height:320px">
+                    @if($post->cover != null)
+                    <img src="{{asset('storage/images/'.$post->cover)}}" class="w-100 h-100"  style="object-fit: cover;object-position: center">
+                    @else
+                    <img src="https://picsum.photos/id/119/800/600" class="w-100 h-100"  style="object-fit: cover;object-position: center">
+                    @endif
                 </div>
                 <div class="col-6 d-flex flex-column justify-content-between">
                     <div class="mt-2">
