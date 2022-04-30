@@ -8,8 +8,8 @@
 </head>
 <body>
     <nav>
-        <a href="/post">文章列表</a>
-        <a href="/post/create">新增文章</a>
+        <a href="{{route('post.index')}}">文章列表</a>
+        <a href="{{route('post.create')}}">新增文章</a>
     </nav>
     <div>
         <h1>{{$post->title}}</h1>
@@ -18,8 +18,8 @@
         </div>
     </div>
     <div>
-        <a href="/post/{{$post->id}}/edit">編輯文章</a>
-        <form action="/post/{{$post->id}}" method="post">
+        <a href="{{route('post.edit',['id'=>$post->id])}}">編輯文章</a>
+        <form action="{{route('post.delete',['id'=>$post->id])}}" method="post">
             @csrf
             @method('delete')
             <input type="submit" value="刪除文章" onclick="return confirm('確認刪除')">
