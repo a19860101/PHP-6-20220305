@@ -85,6 +85,8 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         //
+        return view('post.edit',compact('post'));
+
     }
 
     /**
@@ -97,6 +99,12 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         //
+        $post->fill($request->all());
+        $post->save();
+
+        // return redirect()->back();
+        return redirect()->route('post.show',['post'=>$post->id]);
+
     }
 
     /**

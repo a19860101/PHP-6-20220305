@@ -12,7 +12,7 @@
         <a href="/post/create">新增文章</a>
     </nav>
     <h1>編輯文章</h1>
-    <form action="{{route('post.update',['id'=>$post->id])}}" method="post">
+    <form action="{{route('post.update',['post'=>$post->id])}}" method="post">
         @csrf
         @method('put')
         <div>
