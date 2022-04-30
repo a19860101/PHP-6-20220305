@@ -16,13 +16,18 @@
                     @endif
                 </div>
                 <div class="col-6 d-flex flex-column justify-content-between">
-                    <div class="mt-2">
+                    <div class="mt-2">$post->created_at
                         <h3>{{Str::limit($post->title,60)}}</h3>
                         <div class="my-3">{{ Str::limit(strip_tags($post->content),100) }}</div>
                         <a href="{{route('post.show',['post'=>$post->id])}}" class="btn btn-outline-primary btn-sm">繼續閱讀</a>
                     </div>
+                    <?php
+                        Carbon\Carbon::setLocale('zh_TW');
+                    ?>
                     <div class="mb-2 text-secondary">
-                        {{$post->created_at}} by JohnDoe
+                        {{-- {{Carbon\Carbon::parse($post->created_at)->toDateString()}} --}}
+                        {{Carbon\Carbon::parse($post->created_at)->diffForHumans()}} by JohnDoe
+                        {{-- {{$post->created_at}} by JohnDoe --}}
                     </div>
                 </div>
             </div>
