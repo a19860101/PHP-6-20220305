@@ -4,8 +4,8 @@
 @endsection
 @section('main')
     <div class="container">
-        <div class="row">
-            <div class="col-12">
+        <div class="row justify-content-center">
+            <div class="col-8">
                 <div class="overflow-hidden mb-3" style="height:300px;">
                     <img src="https://picsum.photos/id/11/800/600" class="w-100 h-100" style="object-fit: cover;object-position: center">
                 </div>
@@ -13,7 +13,7 @@
                 <small class="text-secondary">{{ $post->created_at }} by JohnDoe</small>
                 <hr>
                 <div>
-                    {{ $post->content }}
+                    {!! $post->content !!}
                 </div>
                 <hr>
                 <div>
