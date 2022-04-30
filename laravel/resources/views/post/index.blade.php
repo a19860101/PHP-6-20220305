@@ -7,17 +7,19 @@
     <div class="row">
         <div class="col-8">
             @foreach($posts as $post)
-            <div>
-                <div>
-                    <img src="https://picsum.photos/id/11/800/400" alt="">
+            <div class="row align-items-center mb-3">
+                <div class="col-6">
+                    <img src="https://picsum.photos/id/11/800/600" class="w-100">
                 </div>
-                <div>
-                    <h3>{{$post->title}}</h3>
-                    <div>{{$post->content}}</div>
-                    <a href="{{route('post.show',['post'=>$post->id])}}">繼續閱讀</a>
-                </div>
-                <div>
-                    {{$post->created_at}} JohnDoe
+                <div class="col-6">
+                    <div>
+                        <h3>{{$post->title}}</h3>
+                        <div>{{$post->content}}</div>
+                        <a href="{{route('post.show',['post'=>$post->id])}}">繼續閱讀</a>
+                    </div>
+                    <div>
+                        {{$post->created_at}} JohnDoe
+                    </div>
                 </div>
             </div>
             @endforeach
