@@ -12,13 +12,13 @@
                     <img src="https://picsum.photos/id/11/800/600" class="w-100">
                 </div>
                 <div class="col-6 d-flex flex-column justify-content-between">
-                    <div>
+                    <div class="mt-2">
                         <h3>{{$post->title}}</h3>
                         <div>{{$post->content}}</div>
                         <a href="{{route('post.show',['post'=>$post->id])}}" class="btn btn-outline-primary btn-sm">繼續閱讀</a>
                     </div>
-                    <div>
-                        {{$post->created_at}} JohnDoe
+                    <div class="mb-2 text-secondary">
+                        {{$post->created_at}} by JohnDoe
                     </div>
                 </div>
             </div>
