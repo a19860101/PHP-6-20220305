@@ -18,6 +18,7 @@
                 <div class="col-6 d-flex flex-column justify-content-between">
                     <div class="mt-2">
                         <h3>{{Str::limit($post->title,60)}}</h3>
+                        <small class="badge bg-secondary">{{$post->category->title}}</small>
                         <div class="my-3">{{ Str::limit(strip_tags($post->content),100) }}</div>
                         <a href="{{route('post.show',['post'=>$post->id])}}" class="btn btn-outline-primary btn-sm">繼續閱讀</a>
                     </div>
