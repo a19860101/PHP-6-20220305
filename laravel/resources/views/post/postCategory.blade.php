@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-9">
-                @foreach ($posts as $post)
+                @foreach ($postCategories as $post)
                     <div class="row mb-3">
                         <div class="col-6 overflow-hidden" style="height:320px">
                             @if ($post->cover != null)
