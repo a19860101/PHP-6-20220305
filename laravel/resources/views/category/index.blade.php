@@ -8,7 +8,8 @@
         </div>
         <div class="col-8">
             <h3>新增分類</h3>
-            <form action="" method="POST">
+            <form action="{{route('category.store')}}" method="POST">
+                @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">分類標題</label>
                     <input type="text" class="form-control" name="title" id="title">
