@@ -21,6 +21,16 @@
                 <input type="submit" class="btn btn-primary" value="新增">
             </form>
         </div>
+        <div class="col-4">
+            <h3>所有分類</h3>
+            <ul class="list-group">
+                @foreach($categories as $category)
+                <li class="list-group-item">
+                    {{$category->title}}
+                </li>
+                @endforeach
+            </ul>
+        </div>
     </div>
 </div>
 @endsection
