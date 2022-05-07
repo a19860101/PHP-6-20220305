@@ -34,3 +34,7 @@ Route::resource('post','PostController');
 Route::post('post/upload','PostController@upload')->name('post.upload');
 Route::resource('category','CategoryController');
 Route::get('category/{id}/post','postController@postWithCategory')->name('postCategory');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
