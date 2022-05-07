@@ -43,7 +43,7 @@
                     <ul class="list-group">
                         @foreach ($categories as $category)
                             <li class="list-group-item">
-                                <a href=""
+                                <a href="{{route('postCategory',['id'=>$category->id])}}"
                                     class="text-secondary text-decoration-none">
                                     {{ $category->title }}</h3>
                                 </a>

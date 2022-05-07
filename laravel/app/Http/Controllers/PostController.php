@@ -148,9 +148,11 @@ class PostController extends Controller
 
         return response()->json(['location' => '/storage/images/'.$img]);
     }
-    public function postWithCategory($category_id){
-        $postCategories = Post::where('category_id',$categroy_id)->get();
+    public function postWithCategory($id){
+        $postCategories = Post::where('category_id',$id)->get();
+        $categories = Category::get();
+        $newPosts = Post::orderBy('id','DESC')->limit(5)->get();
 
-        return view('post.postCategory',compact('postCategories'));
+        return view('post.postCategory',compact('postCategories','categories','newPosts'));
     }
 }
