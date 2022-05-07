@@ -30,7 +30,7 @@
                             ?>
                             <div class="mb-2 text-secondary">
                                 {{-- {{Carbon\Carbon::parse($post->created_at)->toDateString()}} --}}
-                                {{ Carbon\Carbon::parse($post->created_at)->diffForHumans() }} by JohnDoe
+                                {{ Carbon\Carbon::parse($post->created_at)->diffForHumans() }} by {{$post->user->name ?? '訪客'}}
                                 {{-- {{$post->created_at}} by JohnDoe --}}
                             </div>
                         </div>
