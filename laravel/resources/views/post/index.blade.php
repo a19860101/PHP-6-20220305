@@ -38,8 +38,16 @@
             <div>
                 <h2>分類</h2>
             </div>
-            <div>
-                <h2>最新文章</h2>
+            <div class="border p-3 rounded-3">
+                <h2 class="bg-primary text-light p-2 fs-4 mb-4 rounded-2">最新文章</h2>
+                @foreach($newPosts as $newPost)
+                <div class="mb-4 border p-3 rounded-2">
+                    <h3 class="fs-6">
+                    <a href="{{route('post.show',['post'=>$newPost->id])}}" class="text-secondary text-decoration-none">
+                            {{$newPost->title}}</h3>
+                    </a>
+                </div>
+                @endforeach
             </div>
         </div>
     </div>
