@@ -14,6 +14,14 @@
                     <input type="text" name='title' class="form-control">
                 </div>
                 <div class="mb-3">
+                    <label for="category_id" class="form-label">文章分類</label>
+                    <select name="category_id" id="category_id" class="form-control">
+                        @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="" class="form-label">封面圖片</label>
                     <input type="file" name="cover" class="form-control">
                 </div>
