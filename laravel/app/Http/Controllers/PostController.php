@@ -18,9 +18,9 @@ class PostController extends Controller
     {
         //
         $posts = Post::orderBy('id','DESC')->get();
-
         $newPosts = Post::orderBy('id','DESC')->limit(5)->get();
-        return view('post.index',compact('posts','newPosts'));
+        $categories = Category::get();
+        return view('post.index',compact('posts','newPosts','categories'));
     }
 
     /**
