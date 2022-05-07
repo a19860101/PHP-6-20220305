@@ -7,6 +7,7 @@ use App\Category;
 use App\Tag;
 use Illuminate\Http\Request;
 use Str;
+use Auth;
 
 class PostController extends Controller
 {
@@ -69,6 +70,7 @@ class PostController extends Controller
         $post = new Post;
         $post->fill($request->all());
         $post->cover = $img;
+        $post->user_id = Auth::id();
         $post->save();
 
         $tags = explode(',',$request->tag);
