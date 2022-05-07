@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Category;
+use App\Tag;
 use Illuminate\Http\Request;
 use Str;
 
@@ -69,6 +70,12 @@ class PostController extends Controller
         $post->fill($request->all());
         $post->cover = $img;
         $post->save();
+
+        $tags = explode(',',$request->tag);
+        foreach($tags as $tag){
+            Tag::firstOrCreate(['title' => $tag]);
+        }
+
 
         // Post::create($request->all());
 
