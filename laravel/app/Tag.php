@@ -8,4 +8,7 @@ class Tag extends Model
 {
     //
     protected $fillable = ['title'];
+    function posts(){
+        return $this->belongsToMany('App\Post');
+    }
 }
