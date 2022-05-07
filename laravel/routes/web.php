@@ -32,3 +32,4 @@ Route::get('/', function () {
 
 Route::resource('post','PostController');
 Route::post('post/upload','PostController@upload')->name('post.upload');
+Route::resource('category','CategoryController');

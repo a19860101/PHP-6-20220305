@@ -16,6 +16,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('post.create') }}">新增文章</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('category.index') }}">分類管理</a>
+                </li>
             </ul>
         </div>
     </div>
