@@ -15,6 +15,11 @@
                     <input type="text" name='title' class="form-control" value="{{$post->title}}">
                 </div>
                 <div class="mb-3">
+                    <label for="tag" class="form-label">標籤</label>
+                    <input type="text" name="tag" class="form-control" value="{{$tags}}">
+
+                </div>
+                <div class="mb-3">
                     <label for="category_id" class="form-label">文章分類</label>
                     <select name="category_id" id="category_id" class="form-control">
                         @foreach($categories as $category)

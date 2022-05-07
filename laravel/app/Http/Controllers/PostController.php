@@ -109,8 +109,13 @@ class PostController extends Controller
     {
         //
         $categories = Category::get();
+        $tags = [];
+        foreach($post->tags as $tag){
+            $tags[] = $tag->title;
 
-        return view('post.edit',compact('post','categories'));
+        }
+        $tags = implode(',',$tags);
+        return view('post.edit',compact('post','categories','tags'));
 
     }
 
