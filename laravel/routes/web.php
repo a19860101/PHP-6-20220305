@@ -30,7 +30,16 @@ Route::get('/', function () {
 // Route::put('post/{id}','PostController@update')->name('post.update');
 // Route::delete('post/{id}','PostController@delete')->name('post.delete');
 
-Route::resource('post','PostController');
+// Route::resource('post','PostController')->middleware('auth');
+
+// Route::group(['middleware' => 'auth'],function(){
+//     Route::resource('post','PostController')->except('index'.'show');
+// });
+
+Route::resource('post','PostController')->except('index'.'show')->middleware('auth');
+Route::resource('post','PostController')->only('index','show');
+
+
 Route::post('post/upload','PostController@upload')->name('post.upload');
 Route::resource('category','CategoryController');
 Route::get('category/{id}/post','postController@postWithCategory')->name('postCategory');
