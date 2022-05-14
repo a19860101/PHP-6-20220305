@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
-
+use Str;
 class ProductController extends Controller
 {
     /**
@@ -46,7 +46,6 @@ class ProductController extends Controller
         }else{
             $img = null;
         }
-
         $product = new Product;
         $product->fill($request->all());
         $product->cover = $img;
