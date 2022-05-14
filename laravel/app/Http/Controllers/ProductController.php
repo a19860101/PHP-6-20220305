@@ -113,12 +113,20 @@ class ProductController extends Controller
     //前台商品列表頁
     public function list(){
 
-        $products = Product::orderBy('started_at','DESC')->get();
+        // $products = Product::orderBy('started_at','DESC')->get();
+
+        $products = Product::where('started_at','<',today())
+        ->orWhere('ended_at','>',today())
+        ->orderBy('started_at','DESC')
+        ->get();
+
         return view('product.list',compact('products'));
     }
     //前台商品頁
     public function detail($id){
         $product = Product::find($id);
+
+
         return view('product.detail',compact('product'));
     }
     // 還原商品
