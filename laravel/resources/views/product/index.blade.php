@@ -55,7 +55,7 @@
                     <td>{{$t->started_at}}</td>
                     <td>{{$t->ended_at}}</td>
                     <td>
-                        <a href="" class="btn btn-info btn-sm">還原</a>
+                        <a href="{{route('product.restore',['product'=>$t->id])}}" class="btn btn-info btn-sm">還原</a>
                         <form action="" method="post" class="d-inline-block">
                             @csrf
                             @method('delete')

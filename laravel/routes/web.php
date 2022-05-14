@@ -51,3 +51,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('admin/product','ProductController');
 Route::get('product','ProductController@list')->name('product.list');
+
+// 還原商品
+Route::get('admin/product/restore/{product}','ProductController@restoreProduct')->name('product.restore');

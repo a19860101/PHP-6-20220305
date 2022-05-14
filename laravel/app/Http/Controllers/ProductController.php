@@ -113,4 +113,9 @@ class ProductController extends Controller
     public function list(){
 
     }
+    // 還原商品
+    public function restoreProduct($id){
+        Product::onlyTrashed()->find($id)->restore();
+        return redirect()->back();
+    }
 }
