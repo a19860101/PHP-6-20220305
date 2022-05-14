@@ -11,8 +11,7 @@
                     <th>商品名稱</th>
                     <th>價格</th>
                     <th>特價</th>
-                    <th>上架</th>
-                    <th>下架</th>
+                    <th>上/下 架</th>
                     <th>管理</th>
                 </tr>
                 @foreach($products as $p)
@@ -21,10 +20,15 @@
                     <td>{{$p->title}}</td>
                     <td>{{$p->price}}</td>
                     <td>{{$p->sale}}</td>
-                    <td>{{$p->started_at}}</td>
-                    <td>{{$p->ended_at}}</td>
                     <td>
-                        <a href="{{route('product.edit',['product' => $p->id])}}" class="btn btn-outline-success btn-sm">編輯</a>
+                        @if($p->started_at > today() || $p->ended_at < today())
+                        <span class="badge bg-danger">下架</span>
+                        @else
+                        <span class="badge bg-primary">上架</span>
+                        @endif
+                    </td>
+                    <td>
+                        <a href="{{route('product.edit',['product' => $p->id])}}" class="btn btn-outline-success btn-sm">商品資訊</a>
                         <form action="{{route('product.destroy',['product' => $p->id])}}" method="post" class="d-inline-block">
                             @csrf
                             @method('delete')

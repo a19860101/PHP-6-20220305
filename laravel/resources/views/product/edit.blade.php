@@ -41,7 +41,7 @@
                         <label class="form-label" for="下架">下架</label>
                         <input class="form-control" id="下架" type="date" name="ended_at" placeholder="下架" value="{{$ended_at}}" />
                     </div>
-                   <input type="submit" class="btn btn-primary" value="儲存">
+                   <input type="submit" class="btn btn-primary" value="修改資料">
                     <input type="button" class="btn btn-danger" value="取消" onclick="history.back()">
                 </form>
         </div>
