@@ -16,7 +16,8 @@ class ProductController extends Controller
     {
         //
         $products = Product::orderBy('started_at','DESC')->get();
-        return view('product.index',compact('products'));
+        $trashes = Product::onlyTrashed()->get();
+        return view('product.index',compact('products','trashes'));
     }
 
     /**
