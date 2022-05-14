@@ -113,6 +113,8 @@ class ProductController extends Controller
 
     public function list(){
 
+        $products = Product::orderBy('started_at','DESC')->get();
+        return view('product.list',compact('products'));
     }
     // 還原商品
     public function restoreProduct($id){
