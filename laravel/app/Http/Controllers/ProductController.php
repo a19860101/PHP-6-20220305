@@ -115,11 +115,11 @@ class ProductController extends Controller
 
         // $products = Product::orderBy('started_at','DESC')->get();
 
-        $products = Product::where('started_at','<',today())
-        ->orWhere('ended_at','>',today())
+        $products = Product::where('started_at','<=',today())
+        ->where('ended_at','>',today())
         ->orderBy('started_at','DESC')
         ->get();
-
+        // return today()->toDateString();
         return view('product.list',compact('products'));
     }
     //前台商品頁
