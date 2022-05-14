@@ -11,7 +11,9 @@
         @foreach($products as $product)
         <div class="col-3">
             <div class="border rounded-3 overflow-hidden">
-                <img src="{{asset('storage/images/'.$product->cover)}}" class="w-100">
+                <a href="{{route('product.detail',['id' => $product->id])}}">
+                    <img src="{{asset('storage/images/'.$product->cover)}}" class="w-100">
+                </a>
                 <hr>
                 <div class="p-3">
                     <h3 class="fs-5 mb-4">{{$product->title}}</h3>

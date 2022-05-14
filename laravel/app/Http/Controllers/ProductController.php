@@ -110,11 +110,16 @@ class ProductController extends Controller
 
         return redirect()->back();
     }
-
+    //前台商品列表頁
     public function list(){
 
         $products = Product::orderBy('started_at','DESC')->get();
         return view('product.list',compact('products'));
+    }
+    //前台商品頁
+    public function detail($id){
+        $product = Product::find($id);
+        return view('product.detail',compact('product'));
     }
     // 還原商品
     public function restoreProduct($id){

@@ -50,8 +50,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::resource('admin/product','ProductController');
-// 前台商品頁
+// 前台商品列表頁
 Route::get('product','ProductController@list')->name('product.list');
+// 前台商品內頁
+Route::get('product/{id}','ProductController@detail')->name('product.detail');
 
 // 還原商品
 Route::get('admin/product/restore/{product}','ProductController@restoreProduct')->name('product.restore');
