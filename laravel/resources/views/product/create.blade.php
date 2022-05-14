@@ -5,7 +5,8 @@
         <div class="row">
             <div class="col-6">
                 <h2>新增商品</h2>
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <form action="{{route('product.store')}}" method="post">
+                    @csrf
                     <div class="mb-3">
                         <label class="form-label" for="商品名稱">商品名稱</label>
                         <input class="form-control" id="商品名稱" type="text" name="title" placeholder="商品名稱" data-sb-validations="" />

@@ -38,6 +38,22 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+
+        if($request->file('cover')){
+            $ext = $request->file('cover')->getClientOriginalExtension();
+            $img = Str::uuid().'.'.$ext;
+            $request->file('cover')->storeAs('images',$img,'public');
+        }else{
+            $img = null;
+        }
+
+        $product = new Product;
+        $product->fill($request->all());
+        $product->cover = $img;
+        $product->save();
+
+        return redirect()->route('product.index');
+
     }
 
     /**
