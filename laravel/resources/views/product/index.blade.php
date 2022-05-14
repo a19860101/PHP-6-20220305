@@ -14,6 +14,22 @@
                     <th>下架</th>
                     <th>管理</th>
                 </tr>
+                @foreach($products as $p)
+                <tr>
+                    <td>{{$p->id}}</td>
+                    <td>{{$p->title}}</td>
+                    <td>{{$p->price}}</td>
+                    <td>{{$p->sale}}</td>
+                    <td>{{$p->started_at}}</td>
+                    <td>{{$p->ended_at}}</td>
+                    <td>
+                        <a href="#" class="btn btn-outline-success btn-sm">編輯</a>
+                        <form action="" class="d-inline-block">
+                            <input type="submit" value="刪除" class="btn btn-danger btn-sm">
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
             </table>
         </div>
         <div class="col-4">
