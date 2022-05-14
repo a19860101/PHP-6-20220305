@@ -23,7 +23,7 @@
                     <td>{{$p->started_at}}</td>
                     <td>{{$p->ended_at}}</td>
                     <td>
-                        <a href="#" class="btn btn-outline-success btn-sm">編輯</a>
+                        <a href="{{route('product.edit',['product' => $p->id])}}" class="btn btn-outline-success btn-sm">編輯</a>
                         <form action="" class="d-inline-block">
                             <input type="submit" value="刪除" class="btn btn-danger btn-sm">
                         </form>
