@@ -56,9 +56,8 @@
                     <td>{{$t->ended_at}}</td>
                     <td>
                         <a href="{{route('product.restore',['product'=>$t->id])}}" class="btn btn-info btn-sm">還原</a>
-                        <form action="" method="post" class="d-inline-block">
+                        <form action="{{route('product.forceDelete',['id' => $t->id])}}" method="post" class="d-inline-block">
                             @csrf
-                            @method('delete')
                             <input type="submit" value="永久刪除" class="btn btn-danger btn-sm">
                         </form>
                     </td>

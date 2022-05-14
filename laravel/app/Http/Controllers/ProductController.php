@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use Str;
+use Storage;
 class ProductController extends Controller
 {
     /**
@@ -116,6 +117,16 @@ class ProductController extends Controller
     // 還原商品
     public function restoreProduct($id){
         Product::onlyTrashed()->find($id)->restore();
+        return redirect()->back();
+    }
+
+    //永久刪除
+    public function forceDelete(Request $request){
+        $product = Product::onlyTrashed()->find($request->id);
+        if($product->cover){
+            Storage::disk('public')->delete('images/'.$product->cover);
+        }
+        Product::onlyTrashed()->find($request->id)->forceDelete();
         return redirect()->back();
     }
 }

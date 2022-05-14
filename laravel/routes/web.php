@@ -54,3 +54,7 @@ Route::get('product','ProductController@list')->name('product.list');
 
 // 還原商品
 Route::get('admin/product/restore/{product}','ProductController@restoreProduct')->name('product.restore');
+
+// 永久刪除商品
+Route::post('admin/product/forceDelete','ProductController@forceDelete')->name('product.forceDelete');
+
