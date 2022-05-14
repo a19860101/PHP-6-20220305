@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('cover')->nullable();
             $table->text('desc');
             $table->integer('price');
-            $table->integer('sale');
+            $table->integer('sale')->nullable();
             $table->timestamp('started_at')->nullable();
             $table->timestamp('ended_at')->nullable();
             $table->timestamps();
