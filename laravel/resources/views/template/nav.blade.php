@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -11,14 +12,19 @@
                     <a class="nav-link active" aria-current="page" href="#">首頁</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('post.index') }}">所有文章</a>
+                    <a class="nav-link" href="{{ route('post.index') }}">所有文章
+                    </a>
                 </li>
+                @auth
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('post.create') }}">新增文章</a>
                 </li>
+                @if(Auth::user()->role == 0)
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('category.index') }}">分類管理</a>
                 </li>
+                @endif
+                @endauth
             </ul>
             <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
