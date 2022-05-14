@@ -24,7 +24,9 @@
                     <td>{{$p->ended_at}}</td>
                     <td>
                         <a href="{{route('product.edit',['product' => $p->id])}}" class="btn btn-outline-success btn-sm">編輯</a>
-                        <form action="" class="d-inline-block">
+                        <form action="{{route('product.destroy',['product' => $p->id])}}" method="post" class="d-inline-block">
+                            @csrf
+                            @method('delete')
                             <input type="submit" value="刪除" class="btn btn-danger btn-sm">
                         </form>
                     </td>
