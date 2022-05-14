@@ -3,7 +3,7 @@
 @section('main')
 <div class="container">
     <div class="row">
-        <div class="col-8">
+        <div class="col-10">
             <table class="table">
                 <tr>
                     <th>商品編號</th>
@@ -32,7 +32,7 @@
                 @endforeach
             </table>
         </div>
-        <div class="col-4">
+        <div class="col-2">
             <ul class="list-group">
                 <li class="list-group-item">
                     <a href="{{route('product.create')}}" class="btn btn-primary btn-sm">新增商品</a>

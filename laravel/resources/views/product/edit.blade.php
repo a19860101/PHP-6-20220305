@@ -28,17 +28,20 @@
                         <label class="form-label" for="特價">特價</label>
                         <input class="form-control" id="特價" type="text" name="sale" placeholder="特價" value="{{$product->sale}}" />
                     </div>
-
+                    <?php
+                        $started_at = Carbon\Carbon::parse($product->started_at)->toDateString();
+                        $ended_at = Carbon\Carbon::parse($product->ended_at)->toDateString();
+                    ?>
                     <div class="mb-3">
                         <label class="form-label" for="上架">上架</label>
-                        <input class="form-control" id="上架" type="date" name="started_at" placeholder="上架" value="{{$product->started_at}}" />
+                        <input class="form-control" id="上架" type="date" name="started_at" placeholder="上架" value="{{$started_at}}" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="下架">下架</label>
-                        <input class="form-control" id="下架" type="date" name="ended_at" placeholder="下架" value="{{$product->ended_at}}" />
+                        <input class="form-control" id="下架" type="date" name="ended_at" placeholder="下架" value="{{$ended_at}}" />
                     </div>
                    <input type="submit" class="btn btn-primary" value="儲存">
-
+                    <input type="button" class="btn btn-danger" value="取消" onclick="history.back()">
                 </form>
         </div>
     </div>
