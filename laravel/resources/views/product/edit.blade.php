@@ -5,8 +5,9 @@
     <div class="row">
         <div class="col-6">
             <h2>編輯商品</h2>
-                <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('product.update',['product' => $product->id])}}" method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('patch')
                     <div class="mb-3">
                         <label class="form-label" for="商品名稱">商品名稱</label>
                         <input class="form-control" id="商品名稱" type="text" name="title" placeholder="商品名稱" value="{{$product->title}}" />
