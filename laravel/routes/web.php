@@ -47,3 +47,6 @@ Route::get('category/{id}/post','postController@postWithCategory')->name('postCa
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::resource('product','ProductController');

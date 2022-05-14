@@ -25,6 +25,12 @@
                 </li>
                 @endif
                 @endauth
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('product.index') }}">商品管理</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('product.list') }}">所有商品</a>
+                </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
