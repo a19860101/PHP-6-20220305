@@ -19,7 +19,7 @@
                     @endif
                 </div>
                 <h2>{{ $post->title }}</h2>
-                <small class="text-secondary"> {{ Carbon\Carbon::parse($post->created_at)->diffForHumans() }} by JohnDoe
+                <small class="text-secondary"> {{ Carbon\Carbon::parse($post->created_at)->diffForHumans() }} by {{$post->user->name}}
                 </small>
                 <hr>
                 <div>
@@ -27,12 +27,14 @@
                 </div>
                 <hr>
                 <div>
+                    @if(Auth::id() == $post->user_id)
                     <a href="{{ route('post.edit', ['post' => $post->id]) }}" class="btn btn-success btn-sm">編輯文章</a>
                     <form action="{{ route('post.destroy', ['post' => $post->id]) }}" method="post" class="d-inline-block">
                         @csrf
                         @method('delete')
                         <input type="submit" value="刪除文章" onclick="return confirm('確認刪除')" class="btn btn-danger btn-sm">
                     </form>
+                    @endif
                     <a href="#" class="btn btn-primary btn-sm" onclick="history.back()">回上頁</a>
                 </div>
             </div>
