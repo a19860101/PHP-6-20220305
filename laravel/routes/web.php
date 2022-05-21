@@ -61,3 +61,5 @@ Route::get('admin/product/restore/{product}','ProductController@restoreProduct')
 // 永久刪除商品
 Route::post('admin/product/forceDelete','ProductController@forceDelete')->name('product.forceDelete');
 
+// 加入購物車
+Route::post('cart','CartController@addToCart')->name('addToCart');

@@ -25,7 +25,11 @@
                         <span>原價 {{$product->price}}</span>
                         @endif
                     </div>
-                    <a href="#" class="btn btn-sm btn-primary">加入購物車</a>
+                    {{-- <a href="#" class="btn btn-sm btn-primary">加入購物車</a> --}}
+                    <form action="{{route('addToCart')}}" method="post">
+                        @csrf
+                        <input type="submit" value="加入購物車" class="btn btn-sm btn-primary">
+                    </form>
                 </div>
             </div>
         </div>
