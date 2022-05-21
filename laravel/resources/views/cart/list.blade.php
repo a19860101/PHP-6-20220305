@@ -44,6 +44,10 @@
         <div class="col-12">
             <hr>
             <div class="text-end">共:{{$total}}</div>
+            <form action="{{route('checkout')}}" method="post">
+                @csrf
+                <input type="submit" value="結帳" class="btn btn-primary">
+            </form>
         </div>
     </div>
 </div>

@@ -72,3 +72,6 @@ Route::delete('cart/{cart}','CartController@deleteCartItem')->name('deleteCartIt
 
 // 移除所有購物項目
 Route::post('cart/remove','CartController@removeCart')->name('removeCart');
+
+// 結帳
+Route::post('checkout','OrderController@checkout')->name('checkout');
