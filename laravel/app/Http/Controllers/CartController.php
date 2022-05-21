@@ -24,7 +24,9 @@ class CartController extends Controller
     public function cartList(){
         $carts = Cart::where('user_id',Auth::id())->get();
         $price = [];
-        $productNum = 1;
+        $productNum = $carts->countBy('product_id');
+
+        return $productNum->all();
         foreach($carts as $cart){
             if($cart->product->sale){
                 $price[] = $cart->product->sale;
