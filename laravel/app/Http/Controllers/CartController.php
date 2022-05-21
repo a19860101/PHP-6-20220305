@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Cart;
 use Auth;
+use DB;
 
 class CartController extends Controller
 {
@@ -23,6 +24,9 @@ class CartController extends Controller
     }
     public function cartList(){
         $carts = Cart::where('user_id',Auth::id())->get();
+        $cartsUniq = collect($carts)->unique('product_id');
+        // return $carts;
+
         $price = [];
         $productNum = $carts->countBy('product_id')->all();
 
@@ -34,7 +38,11 @@ class CartController extends Controller
             }
         }
         $total = collect($price)->sum();
-        return view('cart.list',compact('carts','total','productNum'));
+        return view('cart.list')->with([
+            'carts' => $cartsUniq,
+            'total' => $total,
+            'productNum' => $productNum
+        ]);
     }
     public function deleteCartItem(Cart $cart){
         $cart->delete();
