@@ -22,7 +22,9 @@
                     </div>
                 </div>
                 <div class="ms-auto align-self-end">
-                    <form action="">
+                    <form action="{{route('deleteCartItem',['cart'=>$cart->id])}}" method="post">
+                        @csrf
+                        @method('delete')
                         <input type="submit" value="刪除" class="btn btn-danger btn-sm">
                     </form>
                 </div>

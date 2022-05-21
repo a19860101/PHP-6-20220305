@@ -25,4 +25,8 @@ class CartController extends Controller
         $carts = Cart::where('user_id',Auth::id())->get();
         return view('cart.list',compact('carts'));
     }
+    public function deleteCartItem(Cart $cart){
+        $cart->delete();
+        return redirect()->back();
+    }
 }
