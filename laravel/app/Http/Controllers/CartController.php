@@ -25,7 +25,6 @@ class CartController extends Controller
     public function cartList(){
         $carts = Cart::where('user_id',Auth::id())->get();
         $cartsUniq = collect($carts)->unique('product_id');
-        // return $carts;
 
         $price = [];
         $productNum = $carts->countBy('product_id')->all();
