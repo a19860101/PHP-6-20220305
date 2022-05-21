@@ -27,4 +27,9 @@ class OrderController extends Controller
             ]);
         }
     }
+    public function orderList(){
+        $orders = Order::where('user_id',Auth::id())->get();
+
+        return view('order.list');
+    }
 }

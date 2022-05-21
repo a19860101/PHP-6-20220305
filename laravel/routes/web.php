@@ -75,3 +75,6 @@ Route::post('cart/remove','CartController@removeCart')->name('removeCart');
 
 // 結帳
 Route::post('checkout','OrderController@checkout')->name('checkout');
+
+// 訂單列表
+Route::get('order/list','OrderController@orderList')->name('orderList');
