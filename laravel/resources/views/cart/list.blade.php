@@ -5,10 +5,12 @@
     <div class="row gy-4">
         <div class="col-12 d-flex justify-content-between">
             <h2>購物車列表</h2>
+            @if(count($carts) != 0)
             <form action="{{route('removeCart')}}" method="post">
                 @csrf
                 <input type="submit" value="清空購物車" class="btn btn-outline-danger">
             </form>
+            @endif
         </div>
         @foreach($carts as $cart)
         <div class="col-12">

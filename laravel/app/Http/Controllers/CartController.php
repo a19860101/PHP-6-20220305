@@ -30,6 +30,10 @@ class CartController extends Controller
         return redirect()->back();
     }
     public function removeCart(){
-        return '清空購物車';
+        $carts = Cart::where('user_id',Auth::id())->get();
+        foreach($carts as $cart){
+            $cart->delete();
+        }
+        return redirect()->back();
     }
 }
