@@ -69,3 +69,6 @@ Route::get('cart/list','CartController@cartList')->name('cartList');
 
 //刪除購物車項目
 Route::delete('cart/{cart}','CartController@deleteCartItem')->name('deleteCartItem');
+
+// 移除所有購物項目
+Route::post('cart/remove','CartController@removeCart')->name('removeCart');

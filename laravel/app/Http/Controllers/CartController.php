@@ -29,4 +29,7 @@ class CartController extends Controller
         $cart->delete();
         return redirect()->back();
     }
+    public function removeCart(){
+        return '清空購物車';
+    }
 }
