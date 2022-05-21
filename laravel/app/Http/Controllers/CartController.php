@@ -21,4 +21,7 @@ class CartController extends Controller
 
         return redirect()->back();
     }
+    public function cartList(){
+        return '購物車列表';
+    }
 }

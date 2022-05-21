@@ -63,3 +63,6 @@ Route::post('admin/product/forceDelete','ProductController@forceDelete')->name('
 
 // 加入購物車
 Route::post('cart','CartController@addToCart')->name('addToCart');
+
+//購物車列表
+Route::get('cart/list','CartController@cartList')->name('cartList');
