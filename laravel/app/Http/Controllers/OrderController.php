@@ -30,6 +30,9 @@ class OrderController extends Controller
     public function orderList(){
         $orders = Order::where('user_id',Auth::id())->get();
 
-        return view('order.list');
+        return view('order.list',compact('orders'));
+    }
+    public function orderDetail($id){
+        return 'order '.$id.' detail';
     }
 }

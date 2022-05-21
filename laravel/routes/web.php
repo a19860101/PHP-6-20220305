@@ -78,3 +78,6 @@ Route::post('checkout','OrderController@checkout')->name('checkout');
 
 // 訂單列表
 Route::get('order/list','OrderController@orderList')->name('orderList');
+
+// 訂單詳細資料
+Route::get('order/{id}/detail','OrderController@orderDetail')->name('orderDetail');
