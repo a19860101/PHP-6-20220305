@@ -24,6 +24,7 @@ class CartController extends Controller
     public function cartList(){
         $carts = Cart::where('user_id',Auth::id())->get();
         $price = [];
+        $productNum = 1;
         foreach($carts as $cart){
             if($cart->product->sale){
                 $price[] = $cart->product->sale;
@@ -32,7 +33,7 @@ class CartController extends Controller
             }
         }
         $total = collect($price)->sum();
-        return view('cart.list',compact('carts','total'));
+        return view('cart.list',compact('carts','total','productNum'));
     }
     public function deleteCartItem(Cart $cart){
         $cart->delete();

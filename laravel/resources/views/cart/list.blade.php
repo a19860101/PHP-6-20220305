@@ -17,7 +17,10 @@
             <div class="border p-3 rounded-3 d-flex">
                 <img src="{{asset('storage/images/'.$cart->product->cover)}}" width="200">
                 <div class="ms-4 d-flex flex-column">
-                    <h3>{{$cart->product->title}}</h3>
+                    <h3>
+                        {{$cart->product->title}}
+                        <small>x{{$productNum}}</small>
+                    </h3>
                     <div class="mt-auto">
                         @if($cart->product->sale)
                         <del class="text-secondary">原價 {{$cart->product->price}}</del>
