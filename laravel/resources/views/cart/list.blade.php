@@ -37,6 +37,10 @@
             </div>
         </div>
         @endforeach
+        <div class="col-12">
+            <hr>
+            <div class="text-end">共:{{$total}}</div>
+        </div>
     </div>
 </div>
 @endsection
