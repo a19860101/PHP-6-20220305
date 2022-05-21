@@ -19,7 +19,8 @@
                 <div class="ms-4 d-flex flex-column">
                     <h3>
                         {{$cart->product->title}}
-                        <small>x{{$productNum}}</small>
+                        <?php $pid = $cart->product->id; ?>
+                        <small>x{{$productNum[$pid]}}</small>
                     </h3>
                     <div class="mt-auto">
                         @if($cart->product->sale)
