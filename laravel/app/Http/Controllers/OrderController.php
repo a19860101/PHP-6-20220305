@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
+use App\OrderDetail;
 use App\Cart;
 use Str;
 use Auth;
@@ -26,6 +27,8 @@ class OrderController extends Controller
                 'order_id'      => $order->id
             ]);
         }
+
+        return redirect()->route('product.list');
     }
     public function orderList(){
         $orders = Order::where('user_id',Auth::id())->get();
@@ -33,6 +36,8 @@ class OrderController extends Controller
         return view('order.list',compact('orders'));
     }
     public function orderDetail($id){
-        return 'order '.$id.' detail';
+        $order_details = OrderDetail::where('order_id',$id)->get();
+
+        return view('order.detail',compact('order_details'));
     }
 }
