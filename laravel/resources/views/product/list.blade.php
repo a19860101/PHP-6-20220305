@@ -26,10 +26,16 @@
                         @endif
                     </div>
                     {{-- <a href="#" class="btn btn-sm btn-primary">加入購物車</a> --}}
+                    @auth
                     <form action="{{route('addToCart')}}" method="post">
                         @csrf
+                        <input type="hidden" name="product_id" value="{{$product->id}}">
                         <input type="submit" value="加入購物車" class="btn btn-sm btn-primary">
                     </form>
+                    @else
+                        <a href="{{route('login')}}" class="btn btn-sm btn-primary">加入購物車</a>
+
+                    @endauth
                 </div>
             </div>
         </div>
